@@ -59,10 +59,12 @@ void setup() {
   //soldier
   soldierFloor=floor(random(0,4));
   //cabbage
-  cabbageLocate=floor(random(0,6));
+  cabbageLocate=floor(random(0,8));
   cabbageFloor=floor(random(0,4));
   cabbageX = cabbageLocate*GROUND;
-  cabbageY = height-cabbageFloor*80-CABBAGE_H;
+  cabbageY = height-cabbageFloor*GROUND-CABBAGE_H;
+  println(cabbageX,cabbageLocate);
+  println(cabbageY,cabbageFloor);
   
   hogX = 4*STEP;
   hogY = 160-HOG_WH;
@@ -184,8 +186,10 @@ void draw() {
           //reset
           heartNum=1;
           soldierFloor=floor(random(0,4));
-          cabbageLocate=floor(random(0,6));
+          cabbageLocate=floor(random(0,8));
           cabbageFloor=floor(random(0,4));
+          cabbageX = cabbageLocate*GROUND;
+          cabbageY = height-cabbageFloor*GROUND-CABBAGE_H;
           hogX = 4*STEP;
           hogY = 160-HOG_WH;
           gameState = GAME_RUN;
