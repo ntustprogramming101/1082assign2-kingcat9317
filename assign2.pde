@@ -63,14 +63,14 @@ void setup() {
   cabbageFloor=floor(random(0,4));
   cabbageX = cabbageLocate*GROUND;
   cabbageY = height-cabbageFloor*GROUND-CABBAGE_H;
-  println(cabbageX,cabbageLocate);
-  println(cabbageY,cabbageFloor);
+  /*println(cabbageX,cabbageLocate);
+  println(cabbageY,cabbageFloor);*/
   
   hogX = 4*STEP;
   hogY = 160-HOG_WH;
   
-  
   frameRate(15);
+  
 }
 
 void draw() {
@@ -98,6 +98,7 @@ void draw() {
 		// Game Run
   case GAME_RUN:
     //draw
+    frameRate(60);
     image(bgImg, 0, 0,width, height);
     image(soilImg, 0, 160,SOIL_W, SOIL_H);
     image(cabbageImg,cabbageX,cabbageY,CABBAGE_W,CABBAGE_H);
@@ -129,6 +130,10 @@ void draw() {
         heartNum--;
         hogX = 4*STEP;
         hogY = 160-HOG_WH;
+        upPressed = false;
+        downPressed = false;
+        rightPressed = false;
+        leftPressed = false;
       }else{
         gameState=GAME_OVER;
       }
