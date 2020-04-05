@@ -102,7 +102,7 @@ void draw() {
     image(bgImg, 0, 0,width, height);
     image(soilImg, 0, 160,SOIL_W, SOIL_H);
     image(cabbageImg,cabbageX,cabbageY,CABBAGE_W,CABBAGE_H);
-    image(hogImg,hogX,hogY,HOG_WH,HOG_WH);
+    
     //Sun
     fill(253,184,19);
     strokeWeight(5);
@@ -150,30 +150,38 @@ void draw() {
     }
     
     //hog move
-    if(upPressed){   
-        hogY-=STEP;
-        if(hogY<160){
-          hogY=160;
+    if(!keyPressed){
+      image(hogImg,hogX,hogY,HOG_WH,HOG_WH);
+    }else{
+      if(upPressed){   
+        image(hogImg,hogX,hogY,HOG_WH,HOG_WH);
+          hogY-=STEP;
+          if(hogY<160){
+            hogY=160;
+          }
         }
-      }
-      if(downPressed){ 
-        hogY+=STEP; 
-        if(hogY>height-HOG_WH){
-          hogY=height-HOG_WH;
-        }      
-      }
-      if(rightPressed){ 
-        hogX+=STEP;
-        if(hogX>width-HOG_WH){
-          hogX=width-HOG_WH;
+        if(downPressed){ 
+          image(hogDownImg,hogX,hogY,HOG_WH,HOG_WH);
+          hogY+=STEP; 
+          if(hogY>height-HOG_WH){
+            hogY=height-HOG_WH;
+          }      
         }
-      }
-      if(leftPressed){ 
-        hogX-=STEP;
-        if(hogX<0){
-          hogX=0;
+        if(rightPressed){ 
+          image(hogRightImg,hogX,hogY,HOG_WH,HOG_WH);
+          hogX+=STEP;
+          if(hogX>width-HOG_WH){
+            hogX=width-HOG_WH;
+          }
         }
-      }
+        if(leftPressed){ 
+          image(hogLeftImg,hogX,hogY,HOG_WH,HOG_WH);
+          hogX-=STEP;
+          if(hogX<0){
+            hogX=0;
+          }
+        }
+    }
       
     //grass
     strokeWeight(15);
