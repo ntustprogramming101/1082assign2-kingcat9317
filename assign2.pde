@@ -68,7 +68,7 @@ void setup() {
   
   hogX = 4*STEP;
   hogY = 160-HOG_WH;
-  soldierX=0;
+  soldierX=-SOLDIER_W;
   
   //frameRate(15);
   
@@ -148,7 +148,7 @@ void draw() {
     if( soldierX<=width){
       soldierX+=1;
     }else{
-      soldierX=0;
+      soldierX=-SOLDIER_W;
     }
     
     //hog move
