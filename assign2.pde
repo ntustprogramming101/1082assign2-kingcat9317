@@ -70,17 +70,17 @@ void setup() {
   hogY = 160-HOG_WH;
   soldierX=-SOLDIER_W;
   
-  //frameRate(15);
+  frameRate(15);
   
 }
 
 void draw() {
   // Enter Your Code Here
 
-	// Switch Game State
+  // Switch Game State
   switch(gameState){
     
-		// Game Start
+    // Game Start
     case GAME_START:
       image(titleImg, 0, 0,width, height);
       if(mouseX > 248 && mouseX < 248+BUTTON_W
@@ -96,7 +96,7 @@ void draw() {
       hogY = 160-HOG_WH;
       break;
       
-		// Game Run
+    // Game Run
   case GAME_RUN:
     //draw
     //frameRate(60);
@@ -156,32 +156,36 @@ void draw() {
       image(hogImg,hogX,hogY,HOG_WH,HOG_WH);
     }else{
       if(upPressed){   
-        frameRate(15);
+        
         image(hogImg,hogX,hogY,HOG_WH,HOG_WH);
+          
           hogY-=STEP;
           if(hogY<160){
             hogY=160;
           }
         }
         if(downPressed){ 
-          frameRate(15);
+          
           image(hogDownImg,hogX,hogY,HOG_WH,HOG_WH);
+ 
           hogY+=STEP; 
           if(hogY>height-HOG_WH){
             hogY=height-HOG_WH;
           }      
         }
         if(rightPressed){ 
-          frameRate(15);
+          
           image(hogRightImg,hogX,hogY,HOG_WH,HOG_WH);
+
           hogX+=STEP;
           if(hogX>width-HOG_WH){
             hogX=width-HOG_WH;
           }
         }
         if(leftPressed){ 
-          frameRate(15);
+          
           image(hogLeftImg,hogX,hogY,HOG_WH,HOG_WH);
+
           hogX-=STEP;
           if(hogX<0){
             hogX=0;
@@ -195,7 +199,7 @@ void draw() {
     line(0, 160-15/2,width, 160-15/2);
       
     break;
-		// Game Lose
+    // Game Lose
   case GAME_OVER:
     image(gameoverImg, 0, 0,width, height);
       if(mouseX > 248 && mouseX < 248+BUTTON_W
