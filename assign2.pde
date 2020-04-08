@@ -69,7 +69,7 @@ void setup() {
   hogX = 4*STEP;
   hogY = 160-HOG_WH;
   
-  frameRate(15);
+  //frameRate(15);
   
 }
 
@@ -98,7 +98,7 @@ void draw() {
 		// Game Run
   case GAME_RUN:
     //draw
-    frameRate(60);
+    //frameRate(60);
     image(bgImg, 0, 0,width, height);
     image(soilImg, 0, 160,SOIL_W, SOIL_H);
     image(cabbageImg,cabbageX,cabbageY,CABBAGE_W,CABBAGE_H);
@@ -154,6 +154,7 @@ void draw() {
       image(hogImg,hogX,hogY,HOG_WH,HOG_WH);
     }else{
       if(upPressed){   
+        frameRate(15);
         image(hogImg,hogX,hogY,HOG_WH,HOG_WH);
           hogY-=STEP;
           if(hogY<160){
@@ -161,6 +162,7 @@ void draw() {
           }
         }
         if(downPressed){ 
+          frameRate(15);
           image(hogDownImg,hogX,hogY,HOG_WH,HOG_WH);
           hogY+=STEP; 
           if(hogY>height-HOG_WH){
@@ -168,6 +170,7 @@ void draw() {
           }      
         }
         if(rightPressed){ 
+          frameRate(15);
           image(hogRightImg,hogX,hogY,HOG_WH,HOG_WH);
           hogX+=STEP;
           if(hogX>width-HOG_WH){
@@ -175,6 +178,7 @@ void draw() {
           }
         }
         if(leftPressed){ 
+          frameRate(15);
           image(hogLeftImg,hogX,hogY,HOG_WH,HOG_WH);
           hogX-=STEP;
           if(hogX<0){
