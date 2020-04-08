@@ -17,7 +17,7 @@ final int BUTTON_H = 60;
 final int STEP = 80;
 
 int soldierFloor=0;
-int soldierWalk=0;
+//int soldierWalk=0;
 float laserX=0,laserY=0;
 int heartNum = 1;
 int cabbageLocate,cabbageFloor=0;
@@ -68,6 +68,7 @@ void setup() {
   
   hogX = 4*STEP;
   hogY = 160-HOG_WH;
+  soldierX=0;
   
   //frameRate(15);
   
@@ -140,13 +141,14 @@ void draw() {
     }
    
     //soldier
-    soldierX=soldierWalk;
+    
     soldierY=height-soldierFloor*80-SOLDIER_H;
     image(soldierImg, soldierX, soldierY,SOLDIER_W,SOLDIER_H);
-    if( soldierWalk<=width){
-      soldierWalk++;
+    
+    if( soldierX<=width){
+      soldierX+=1;
     }else{
-      soldierWalk=0;
+      soldierX=0;
     }
     
     //hog move
