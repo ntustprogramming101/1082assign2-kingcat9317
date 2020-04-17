@@ -110,6 +110,10 @@ void draw() {
     stroke(255,255, 0);
     ellipse(width-50,50,120,120);
 
+    //grass
+    strokeWeight(15);
+    stroke(124,204,25);
+    line(0, 160-15/2,width, 160-15/2);
     
     //draw heart
     if(heartNum>=0){
@@ -193,10 +197,7 @@ void draw() {
         }
     }
       
-    //grass
-    strokeWeight(15);
-    stroke(124,204,25);
-    line(0, 160-15/2,width, 160-15/2);
+    
       
     break;
     // Game Lose
